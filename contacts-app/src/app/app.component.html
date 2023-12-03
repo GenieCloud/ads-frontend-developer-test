@@ -7,7 +7,46 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
+<style>
+    .container{
+        background-color: blue;
+    }
+    th
+    {
+        color: white;
+        border: 2px solid black;
+    }
+</style>
 
+<div class="container">    
+    <table class="table table-bordered table-hover">    
+      <tr>    
+        <th>ID</th>    
+        <th>Company Name</th>    
+        <th>Contact Name</th>    
+        <th>Contact Title</th>
+        <th>Address</th>
+        <th>City</th>    
+        <th>Email</th>    
+        <th>Postal Code</th>
+        <th>Country</th>    
+        <th>Phone</th>
+        <th>Fax</th>
+      </tr>    
+      <tr *ngFor="let item of xmlItems">    
+        <td>{{item.id}}</td>    
+        <td>{{item.companyName}}</td>    
+        <td>{{item.contactName}}</td>    
+        <td>{{item.address}}</td>
+        <td>{{item.city}}</td>  
+        <td>{{item.email}}</td>  
+        <td>{{item.postalCode}}</td>  
+        <td>{{item.country}}</td> 
+        <td>{{item.phone}}</td>  
+        <td>{{item.fax}}</td>
+      </tr>    
+    </table>    
+  </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
