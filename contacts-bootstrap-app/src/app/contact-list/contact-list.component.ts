@@ -1,12 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-contact-list',
-  standalone: true,
-  imports: [],
   templateUrl: './contact-list.component.html',
-  styleUrl: './contact-list.component.css'
+  styleUrls: ['./contact-list.component.css']
 })
-export class ContactListComponent {
+export class ContactListComponent implements OnInit {
 
+  contacts!: { id: any; name: any; description: any; email: any; }[];
+  selectedContact: any;
+
+  constructor(public dataService: DataService) { }
+
+  ngOnInit() {
+    this.contacts = this.dataService.getContacts();    
+  }
+  public selectContact(contact: any){
+    this.selectedContact = contact;
+  }
 }
